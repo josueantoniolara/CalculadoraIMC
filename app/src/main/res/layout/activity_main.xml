@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Leyenda del IMC -->
+        <TextView
+            android:id="@+id/tvLegend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El IMC (Índice de Masa Corporal) es un número que se calcula dividiendo el peso entre la altura al cuadrado."
+            android:textSize="16sp"
+            android:paddingBottom="16dp" />
+
+        <!-- Botón de inicio -->
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar" />
+
+        <!-- Contenedor de inputs oculto al principio -->
+        <LinearLayout
+            android:id="@+id/layoutInputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="16dp">
+
+            <!-- Selección de unidades -->
+            <RadioGroup android:id="@+id/unitGroup"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbMetric"
+                    android:text="Kg / m"
+                    android:checked="true"
+                    android:layout_height="10dp"
+                    tools:ignore="HardcodedText"
+                    android:layout_width="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbImperial"
+                    android:text="Lb / in"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    tools:ignore="HardcodedText" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etWeight"
+                android:autofillHints=""
+                android:hint="Peso"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/etHeight"
+                android:autofillHints=""
+                android:hint="Altura"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calcular IMC"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:textSize="18sp"
+                android:paddingTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
